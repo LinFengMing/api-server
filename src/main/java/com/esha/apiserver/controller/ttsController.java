@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+
 @RestController
 @RequestMapping("/api/tts")
 public class ttsController {
@@ -29,6 +31,12 @@ public class ttsController {
     @GetMapping (path = "/call", produces = "application/json")
     public ResponseEntity call() {
         String response = WebClientUtil.post();
+        return ResponseEntity.status(HttpStatus.OK).body(response);
+    }
+
+    @GetMapping (path = "/wav", produces = "application/json")
+    public ResponseEntity wav() throws IOException {
+        Boolean response = WebClientUtil.download("告警測試請撥打電話");
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
