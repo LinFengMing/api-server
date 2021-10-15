@@ -22,8 +22,12 @@ spring:
       max-wait: -1   # 连接池最大阻塞等待时间（使用负值表示没有限制）
       max-idle: 8    # 连接池中的最大空闲连接
       min-idle: 0    # 连接池中的最小空闲连接
-file:
-  upload:
-    path: C:\Users\LIN\Desktop\api-server\src\main\resources\static\wav
 tts:
-  url: https://10.10.10.170:8443
+  service: https://10.10.10.170:8443
+deltapath:
+  service: http://218.32.244.236
+  username: 123456
+  secret: 216e8d767eb0ada74ed3eac23a1b2f18
+  ivr: 300
+file:
+  path: src/main/resources/static/wav/
